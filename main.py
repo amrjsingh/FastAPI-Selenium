@@ -68,7 +68,7 @@ async def path_params(param: str):
     }
 
     response = requests.get(url, params=msdata)
-    hj=startB(id,driver)
+    startB(id,driver)
 
     return "started plz wait"
 
