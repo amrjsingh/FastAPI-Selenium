@@ -287,7 +287,7 @@ def createDriver() -> webdriver.Chrome:
         "chat_id": chat_id,
         "text": "chromedriver started sucessfully"
     }
-    drivelogin(myDriver)
+    jg=drivelogin(myDriver)
     response = requests.get(url, params=msdata)
     return myDriver
 
