@@ -282,12 +282,36 @@ def createDriver() -> webdriver.Chrome:
 
 
     chrome_options.add_experimental_option("prefs", prefs)
-    myDriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     msdata = {
         "chat_id": chat_id,
         "text": "chromedriver started sucessfully"
     }
-    driver=drivelogin(myDriver)
+
+    url = "https://quiz.directory/"
+    driver.get(url)
+    time.sleep(5)
+    login_button = driver.find_element(By.CLASS_NAME, 'bq-header-login-btn')
+    login_button.click()
+    driver.switch_to.window(driver.window_handles[-1])
+    nump = driver.find_element(By.ID, 'login-phone')
+    nump.send_keys(7410823899)
+    sub = driver.find_elements(By.CLASS_NAME, 'button-item-label')[1]
+    sub.click()
+    msdata = {
+        "chat_id": chat_id,
+        "text": "plzz click on confirm"
+    }
+
+    response = requests.get(url, params=msdata)
+    driver.switch_to.window(driver.window_handles[0])
+    msdata = {
+        "chat_id": chat_id,
+        "text": "successfully logged in"
+    }
+
+    response = requests.get(url, params=msdata)
+    
     response = requests.get(url, params=msdata)
     return driver
 
