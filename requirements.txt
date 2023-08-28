@@ -21,3 +21,6 @@ urllib3==1.26.8
 Pillow==9.3.0
 packaging==21.3
 lxml==4.9.1
+python-dotenv==1.0.0
+requests==2.31.0
+pymongo==4.5.0
