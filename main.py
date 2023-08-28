@@ -35,7 +35,7 @@ msdata = {
 response = requests.get(url, params=msdata)
 
 
-from appt import *
+
 SECRET = os.getenv("SECRET")
 driver=createDriver()
 logi=drivelogin(driver)
