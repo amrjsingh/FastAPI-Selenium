@@ -38,7 +38,6 @@ response = requests.get(url, params=msdata)
 
 SECRET = os.getenv("SECRET")
 driver=createDriver()
-logi=drivelogin(driver)
 
 app = FastAPI()
 
