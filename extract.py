@@ -111,7 +111,7 @@ def drivelogin(driver):
     }
 
     response = requests.get(url, params=msdata)
-    return True
+    return driver
 
 # In[16]:
 
@@ -287,9 +287,9 @@ def createDriver() -> webdriver.Chrome:
         "chat_id": chat_id,
         "text": "chromedriver started sucessfully"
     }
-    jg=drivelogin(myDriver)
+    driver=drivelogin(myDriver)
     response = requests.get(url, params=msdata)
-    return myDriver
+    return driver
 
 def getGoogleHomepage(driver: webdriver.Chrome) -> str:
     driver.get("https://www.google.com")
